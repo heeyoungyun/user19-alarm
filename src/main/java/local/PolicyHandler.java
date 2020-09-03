@@ -20,7 +20,7 @@ public class PolicyHandler{
     public void wheneverReservationCompleted_Notify(@Payload ReservationCompleted reservationCompleted){
 
         if(reservationCompleted.isMe()){
-            System.out.println("##### listener Notify : " + reservationCompleted.toJson());
+            System.out.println("#### listener Notify : " + reservationCompleted.toJson());
 
             addNotificationHistory(reservationCompleted.getCustNm(), "reservationCompleted");
         }
@@ -29,7 +29,7 @@ public class PolicyHandler{
     public void wheneverReservationChanged_Notify(@Payload ReservationChanged reservationChanged){
 
         if(reservationChanged.isMe()){
-            System.out.println("##### listener Notify : " + reservationChanged.toJson());
+            System.out.println("#### listener Notify : " + reservationChanged.toJson());
 
             addNotificationHistory(reservationChanged.getCustNm(), "reservationChanged");
         }
