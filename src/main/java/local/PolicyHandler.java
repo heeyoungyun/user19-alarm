@@ -22,7 +22,7 @@ public class PolicyHandler{
         if(reservationCompleted.isMe()){
             System.out.println("##### listener Notify : " + reservationCompleted.toJson());
 
-            addNotificationHistory("(Customer)" + reservationCompleted.getCustNm(), "reservationCompleted");
+            addNotificationHistory(reservationCompleted.getCustNm(), "reservationCompleted");
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
@@ -31,7 +31,7 @@ public class PolicyHandler{
         if(reservationChanged.isMe()){
             System.out.println("##### listener Notify : " + reservationChanged.toJson());
 
-            addNotificationHistory("(Customer)" + reservationChanged.getCustNm(), "reservationChanged");
+            addNotificationHistory(reservationChanged.getCustNm(), "reservationChanged");
         }
     }
 
